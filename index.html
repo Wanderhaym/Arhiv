@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050810">
+<title>WM — Контакт</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="app">
+  <header class="topbar">
+    <div class="brand">
+      <div class="wm-logo">WM</div>
+      <div><h1>WANDERHAYM</h1><small>PROTOCOL // CONTACT</small></div>
+    </div>
+    <div class="progress" id="progress"></div>
+  </header>
+
+  <section class="view active" id="splash">
+    <div class="panel splash">
+      <div class="splash-copy">
+        <div class="kicker">WM CONTACT CARDS 1.1</div>
+        <h2>Мир знает больше, чем игра.</h2>
+        <p>Некоторые существа WM открываются только через внешний интеллект.</p>
+        <button class="primary" onclick="startGame()">НАЧАТЬ КОНТАКТ</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="view" id="contact">
+    <div class="contact-layout">
+      <div class="card-stage">
+        <img id="encounterImage" class="contact-card" alt="WM contact card">
+      </div>
+
+      <aside class="control-panel">
+        <div class="control-kicker">ПРАВИЛО КОНТАКТА</div>
+        <h2>Сфоткай карточку и отправь в ChatGPT.</h2>
+        <p class="control-help">Полученный ключ введи ниже.</p>
+
+        <label class="field-label" for="answer">КЛЮЧ КОНТАКТА</label>
+        <input id="answer" autocomplete="off" placeholder="НАПРИМЕР: XXXXX-00">
+
+        <button class="primary full" onclick="checkAnswer()">ПРОВЕРИТЬ</button>
+        <div class="feedback" id="feedback"></div>
+
+        <div class="control-actions">
+          <button class="secondary" onclick="openArchive()">АРХИВ</button>
+          <button class="secondary" onclick="downloadCurrent()">СКАЧАТЬ КАРТОЧКУ</button>
+          <button class="secondary danger-outline" onclick="resetProgress()">СБРОСИТЬ ТЕСТ</button>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section class="view" id="archive">
+    <div class="archive-head">
+      <div><h2>Архив WM</h2><p>Полученные контакты сохраняются локально на устройстве.</p></div>
+      <button class="secondary" onclick="renderEncounter()">НАЗАД</button>
+    </div>
+    <div class="grid" id="archiveGrid"></div>
+  </section>
+
+  <section class="view" id="complete">
+    <div class="panel complete">
+      <div class="symbol">◇</div>
+      <div class="kicker">WM PROTOCOL ACCEPTED</div>
+      <h2>ПРОТОКОЛ ОТКРЫТ</h2>
+      <p>Тестовая сигнатура расшифрована.<br>В Архиве обнаружены следы других объектов.</p>
+      <h2 style="font-size:30px">1 / ???</h2>
+      <button class="primary" onclick="openArchive()">ОТКРЫТЬ АРХИВ</button>
+      <button class="secondary" style="margin-left:8px" onclick="resetProgress()">НАЧАТЬ ЗАНОВО</button>
+    </div>
+  </section>
+</div>
+<script src="app.js"></script>
+</body>
+</html>

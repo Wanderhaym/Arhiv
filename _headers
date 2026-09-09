@@ -1,0 +1,5 @@
+/wm/*
+  X-Robots-Tag: index, follow
+
+/assets/*
+  Cache-Control: public, max-age=86400
